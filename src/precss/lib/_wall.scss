@@ -8,13 +8,24 @@
       padding-bottom: 0;
     }
 
-    &--down {padding-top: 0;}
+    &--down {padding-top: 0;
+    flex-direction: row-reverse;}
   }
-  &__section--new-step &__item:first-child {
+  &__section--new-forward &__item:first-child {
     animation-name: swipe;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    // animation-delay: 1.5s;
+    // animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+  }
+
+  &__section--new-back &__item:first-child {
+    animation-name: swipeBack;
     animation-duration: 3s;
     animation-direction: alternate-reverse;
     animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
   }
   &__item {
     width: calc(25% - 20px);

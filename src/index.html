@@ -10,7 +10,7 @@
 <body>
   <main>
     <section class="wall">
-      <section class="wall__section wall__section--up wall__section--new-step">
+      <section class="wall__section wall__section--up">
         <article class="wall__item wall__item--no-pic">
           <div class="wall__content">
             <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore?</div>
@@ -24,12 +24,6 @@
           </div>
         </article>
         <article class="wall__item wall__item--no-pic">
-          <div class="wall__content">
-            <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore?</div>
-            <div class="wall__author wall__author--tw">AuthorName</div>
-          </div>
-        </article>
-        <article class="wall__item">
           <div class="wall__content">
             <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore?</div>
             <div class="wall__author wall__author--tw">AuthorName</div>
@@ -56,7 +50,7 @@
             <div class="wall__author wall__author--tw">AuthorName</div>
           </div>
         </article>
-        <article class="wall__item">
+        <article class="wall__item wall__item--no-pic">
           <div class="wall__content">
             <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore?</div>
             <div class="wall__author wall__author--tw">AuthorName</div>
@@ -65,6 +59,12 @@
         <article class="wall__item">
           <div class="wall__content">
             <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi, labore?</div>
+            <div class="wall__author wall__author--tw">AuthorName</div>
+          </div>
+        </article>
+        <article class="wall__item">
+          <div class="wall__content">
+            <div class="wall__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, deleniti??</div>
             <div class="wall__author wall__author--tw">AuthorName</div>
           </div>
         </article>
@@ -81,5 +81,16 @@
     </div>
     <div class="page-footer__item hashtag">#SNMG</div>
   </footer>
+  <template>
+    <article class="wall__item">
+      <div class="wall__content">
+        <div class="wall__text"></div>
+        <div class="wall__author"></div>
+      </div>
+    </article>
+  </template>
+  <script src="js/data.js"></script>
+  <script src="js/utils.js"></script>
+  <script src="js/animate.js"></script>
 </body>
 </html>
