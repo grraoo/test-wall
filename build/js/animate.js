@@ -1,5 +1,3 @@
-console.log(data);
-
 var templateItem = document.querySelector('template').content.querySelector('.wall__item');
 var wallSections = [].slice.call(document.querySelectorAll('.wall__section'));
 
@@ -15,6 +13,9 @@ var createItem = function(wallSection, post, direction) {
   var itemText = newItem.querySelector('.wall__text');
   authorName.innerText = post.author;
   itemText.innerText = post.text;
+  if(post.media) {
+    newItem.style = 'background-image: url('+post.media+')';
+  }
   wallSection.insertBefore(newItem, wallSection.firstChild);
   newStep(wallSection, direction);
 
@@ -25,29 +26,28 @@ data.forEach(function(post, i) {
 });
 
 var counter = 0;
+var delOldItem = function(section, qnt){
+
+  var oldItem = section.children[qnt];
+  if(oldItem) {
+    section.removeChild(oldItem);
+  }
+};
 
 var swipeWall = function() {
+
+  delOldItem(wallSections[0], 5);
   setTimeout(function() {
-    console.log(counter);
     createItem(wallSections[0], data[counter], 0);
     counter++;
+    console.log(wallSections[0].children.length);
     if(counter < data.length) {
-
       swipeWall();
-
     } else {
       console.log('ok');
-      setTimeout(function() {
-        var oldItem = wallSections[0].children[4];
-        wallSections[0].removeChild(oldItem);}, 1500
-      );
+      delOldItem(wallSections[0], 5);
     }
-    setTimeout(function() {
-      var oldItem = wallSections[0].children[4];
-      if(oldItem) {
-        wallSections[0].removeChild(oldItem);
-      }
-    }, 1500);
   }, 1500);
+
   };
   swipeWall();

@@ -32,19 +32,19 @@ var data = [
   {
     author: 'Sasha Reushkin',
     social: 'inst',
-    media: 'wall3.jpg',
+    media: 'img/wall3.jpg',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, deleniti?'
   },
   {
     author: 'Andrey Okonetchnikov',
     social: 'tw',
-    media: 'wall4.jpg',
+    media: 'img/wall4.jpg',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, deleniti?'
   },
   {
     author: 'Tanya Krav',
     social: 'vk',
-    media: 'wall5.jpg',
+    media: 'img/wall5.jpg',
     text: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro, deleniti?'
   },
 
