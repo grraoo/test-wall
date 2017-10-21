@@ -1,0 +1,49 @@
+.wall {
+  &__section {
+    display: flex;
+    padding: 10px;
+
+    &--up {
+      padding-bottom: 0;
+    }
+
+    &--down {padding-top: 0;}
+  }
+
+  &__item {
+    width: 25%;
+    border: 10px solid blue;
+    position: relative;
+    margin: 10px;
+    &::before {
+      content: '';
+      display: block;
+      padding-bottom: 100%;
+    }
+  }
+
+  &__content {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    right: 10px;
+    background-color: lightblue;
+
+    &:hover {
+      top: 10px;
+      .wall__text {
+        display: block;
+      }
+    }
+  }
+
+  &__text {
+    display: none;
+  }
+
+  &__author {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+}

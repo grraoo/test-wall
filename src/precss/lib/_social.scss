@@ -1,0 +1,11 @@
+.social {
+  display: flex;
+  margin: 0 50px;
+
+  &__item {
+    font-size: 0;
+    padding: 10px;
+    border: 2px solid blue;
+    margin: 0 10px;
+  }
+}
