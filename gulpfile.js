@@ -7,8 +7,6 @@ var gcmq = require('gulp-group-css-media-queries');
 var cleanCSS = require('gulp-clean-css');
 var deletefile = require('gulp-delete-file');
 const typograf = require('gulp-typograf');
-var uglify = require('gulp-uglify');
-// var pump = require('pump');
 
 
 var config = {
@@ -25,16 +23,6 @@ var config = {
 		src: 'js/**/*js',
 	}
 }
-
-// gulp.task('compress', function (cb) {
-//   pump([
-//         gulp.src(config.src + config.js.src),
-//         uglify(),
-//         gulp.dest(config.dest + 'js')
-//     ]
-//   );
-// });
-
 
 gulp.task('imgmin', () =>
     gulp.src('src/img/**/*')
@@ -96,11 +84,11 @@ gulp.task('copyHtml', function() {
 
 
 gulp.task('watch', ['browserSync'], function() {
+
 	gulp.watch(config.src + config.css.src, function() {
 		setTimeout(function(){
 			gulp.start('build');
 		}, 500);
 	});
 	gulp.watch(config.src + config.html.src, ['copyHtml']);
-	// gulp.watch(config.dest + 'js', ['']);
 });
