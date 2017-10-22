@@ -1,5 +1,9 @@
+* {
+  -webkit-backface-visibility: hidden;
+}
 .wall {
 position: relative;
+width: 100%;
   &::before {
     content: '';
     position: absolute;
@@ -28,6 +32,7 @@ position: relative;
     flex-direction: row-reverse;}
   }
   &__section--up &__item:first-child {
+    -webkit-backface-visibility: hidden;
     animation-name: swipe;
     animation-duration: 1.5s;
     animation-direction: normal;
@@ -37,6 +42,7 @@ position: relative;
   }
 
   &__section--down &__item:first-child {
+    -webkit-backface-visibility: hidden;
     animation-name: swipeBack;
     animation-duration: 1.5s;
     animation-direction: normal;
@@ -51,6 +57,7 @@ position: relative;
     position: relative;
     margin: 10px;
     transition-duration: .5s;
+    -webkit-backface-visibility: hidden;
     &::before {
       content: '';
       display: block;
@@ -82,6 +89,7 @@ position: relative;
   }
 
   &__text {
+    -webkit-backface-visibility: hidden;
     animation-name: showText;
     animation-duration: 6s;
     animation-iteration-count: infinite;
