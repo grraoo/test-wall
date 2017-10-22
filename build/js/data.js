@@ -9,7 +9,7 @@ var data = [
     author: '2Tanya Krav',
     social: 'tw',
     media: null,
-    text: 'Что отражаем, то и порождаем. Я металлический'
+    text: 'Я металлический'
   },
   {
     author: '3Николай Булкин',
@@ -75,7 +75,7 @@ var data = [
     author: '13Степан Луков',
     social: 'tw',
     media: null,
-    text: 'Правильный чай: шен-пуэр с лимоном из гайвани. Тепла и уюта в вашу жизнь!'
+    text: 'Правильный чай: шен-пуэр!'
   },
   {
     author: '14Sasha Reushkin',

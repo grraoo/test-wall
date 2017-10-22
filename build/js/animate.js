@@ -1,4 +1,9 @@
-const TIME = 1500;
+const TIME = 4000;
+const patterns = [
+  '--pattern-1',
+  '--pattern-2',
+  '--pattern-3'
+];
 var templateItem = document.querySelector('template').content.querySelector('.wall__item');
 
 var wallSections = [].slice.call(document.querySelectorAll('.wall__section'));
@@ -9,19 +14,26 @@ var createItem = function(wallSection, post, direction) {
   var authorName = newItem.querySelector('.wall__author');
   var itemText = newItem.querySelector('.wall__text');
   authorName.innerText = post.author;
-  itemText.innerText = post.text;
+
+  textLength = post.text.length;
+  itemText.innerText = textLength.toString() + post.text;
+  if(textLength < 150) {
+    itemText.style.fontSize = Math.max(Math.sqrt(35000 / textLength), 24) + 'px';
+  } else {
+
+  }
+
   if(post.media) {
     newItem.style = 'background-image: url('+post.media+')';
+  } else {
+    var mod = patterns[Math.floor(Math.random() * patterns.length)];
+    changeClass(newItem, 'wall__item--pattern', true);
+    changeClass(newItem, 'wall__item' + mod, true);
   }
+
   wallSection.insertBefore(newItem, wallSection.firstChild);
 }
 var counter = 0;
-
-data.forEach(function(post, i) {
-  // counter++;
-  console.log(post.author);
-  console.log((i+1) % data.length);
-});
 
 var delOldItem = function(section, qnt){
   var oldItem = section.children[qnt];
@@ -35,7 +47,7 @@ var toggleBanner = function (container) {
     setTimeout(function() {
       changeClass(container, 'show-banner', T);
       swipeWall(container);
-    }, TIME);
+    }, TIME );
   }, TIME);
 }
 var swipeWall = function(container) {

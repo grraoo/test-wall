@@ -46,7 +46,8 @@ position: relative;
   &__item {
     width: calc(25% - 20px);
     min-width: calc(25% - 20px);
-    border: 10px solid blue;
+    background-size: cover;
+    background-position: center;
     position: relative;
     margin: 10px;
     transition-duration: .5s;
@@ -56,35 +57,56 @@ position: relative;
       padding-bottom: 100%;
     }
 
-    &::after {
-      counter-increment: posts;
-      content: counter(posts);
-      position: absolute;
-      top: 10px;
-      left: 10px;
-      font-size: 20px;
-      font-weight: bold;
-      color: red;
+    &--pattern-1 {
+      background-image: url('../img/pattern-1.jpg');
     }
+    &--pattern-2 {
+      background-image: url('../img/pattern-2.jpg');
+    }
+    &--pattern-3 {
+      background-image: url('../img/pattern-3.jpg');
+    }
+  }
+  &__item--pattern &__text {
+    animation: none;
   }
 
   &__content {
     position: absolute;
-    bottom: 10px;
-    left: 10px;
-    right: 10px;
-    background-color: lightblue;
+    bottom: 20px;
+    left: 20px;
+    right: 20px;
 
-    &:hover {
-      top: 10px;
-      .wall__text {
-        display: block;
-      }
-    }
+
+    background-color: lightblue;
   }
 
   &__text {
-    display: none;
+    animation-name: showText;
+    animation-duration: 6s;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-timing-function: linear;
+    font-size: 24px;
+    line-height: 1.7;
+    padding: 10px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    outline: 2px solid;
+    height: 288px;
+
+    display: block;
+    /* Fallback for non-webkit */
+    display: -webkit-box;
+    max-width: 100%;
+
+    /* Fallback for non-webkit */
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+
+    word-break: break-all;
   }
 
   &__author {
