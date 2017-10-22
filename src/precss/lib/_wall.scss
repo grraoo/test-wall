@@ -1,5 +1,7 @@
 .wall {
+  overflow: hidden;
   &__section {
+    transition-duration: .5s;
     counter-reset: posts;
     display: flex;
     padding: 10px;
@@ -11,7 +13,7 @@
     &--down {padding-top: 0;
     flex-direction: row-reverse;}
   }
-  &__section--new-forward &__item:first-child {
+  &__section--up &__item:first-child {
     animation-name: swipe;
     animation-duration: 1.5s;
     animation-direction: normal;
@@ -20,11 +22,11 @@
     animation-timing-function: ease-in-out;
   }
 
-  &__section--new-back &__item:first-child {
+  &__section--down &__item:first-child {
     animation-name: swipeBack;
-    animation-duration: 3s;
-    animation-direction: alternate-reverse;
-    animation-iteration-count: infinite;
+    animation-duration: 1.5s;
+    animation-direction: normal;
+    // animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
   }
   &__item {
@@ -75,5 +77,15 @@
     position: absolute;
     bottom: 0;
     left: 0;
+  }
+}
+
+
+.show-banner {
+  .wall__section--up {
+    transform: translateY(-100%);
+  }
+  .wall__section--down {
+    transform: translateY(100%);
   }
 }
