@@ -24,13 +24,20 @@ data.forEach(function(post, i) {
 });
 
 var delOldItem = function(section, qnt){
-
   var oldItem = section.children[qnt];
   if(oldItem) {
     section.removeChild(oldItem);
   }
 };
-
+var toggleBanner = function (container) {
+  setTimeout(function() {
+    changeClass(container, 'show-banner', T);
+    setTimeout(function() {
+      changeClass(container, 'show-banner', T);
+      swipeWall(container);
+    }, TIME);
+  }, TIME);
+}
 var swipeWall = function(container) {
   var section = container.children[counter % 2];
   delOldItem(section, 5);
@@ -47,14 +54,6 @@ var swipeWall = function(container) {
   }, TIME);
 };
 
-function toggleBanner(container) {
-  setTimeout(function() {
-    changeClass(container, 'show-banner', T);
-    setTimeout(function() {
-      changeClass(container, 'show-banner', T);
-      swipeWall(container);
-    }, TIME);
-  }, TIME);
-}
 
-toggleBanner(container);
+
+swipeWall(container);
